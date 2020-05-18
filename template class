@@ -1,0 +1,66 @@
+/******************************************************************************
+
+2. Create a template to find max of an array
+    *Double
+    *Integer
+    *Char
+
+*******************************************************************************/
+#include<iostream>
+#include<conio.h>
+
+using namespace std;
+int n=5;
+template<class T>
+T largest(T arr[],int n) 
+{ 
+    int i; 
+    T m = 0; 
+    for (i = 0; i <= n; i++) 
+        if (arr[i] > m) 
+            m = arr[i]; 
+    return m; 
+} 
+  
+int main() 
+{ 
+    int n;
+    cout<<"ENTER NO OF ELEMENTS:\t";
+    cin>>n;
+    char brr[n];
+    double crr[n];
+    int arr[n];
+    char chk;
+    cout<<"ENTER YOUR CHOICE: 1. INTEGER ARRAY\t2.CHARACTER ARRAY\t3.FOR DOUBLE ARRAY(FLOAT) ";
+    cin>>chk;
+    cout<<"\n\n\n";
+    if(chk=='1')
+    {
+        cout<<"Enter the array of "<<n<<" integers : \n";
+        for(int i=0;i<n;i++)
+        {
+            cin>>arr[i];
+        }
+        
+        cout<<"maximum element (int)\t"<<largest(arr, n)<<endl; 
+    }
+    else if(chk=='2')
+    {
+        cout <<"enter("<<n<<") Character values  :\n";
+        for(int j=0; j < n; j++)
+        {
+              cin >> brr[j];
+        }
+    	cout<<"maximum element (CHAR)\t"<<largest(brr,n)<<endl;
+    }
+    else
+    {
+        cout <<"enter"<<n<<" Decimal(double float) values: \n";
+        for(int k=0; k < n; k++)
+        {
+            cin >> crr[k];
+        }
+        cout<<"maximum element (double float)\t"<<largest(crr,n)<<endl;
+    }
+    return 0;
+ }
